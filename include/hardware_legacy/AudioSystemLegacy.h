@@ -66,7 +66,8 @@ enum audio_source {
     AUDIO_SOURCE_FM_RX_A2DP = 9,
     AUDIO_SOURCE_MAX = AUDIO_SOURCE_FM_RX_A2DP,
 #else
-    AUDIO_SOURCE_MAX = AUDIO_SOURCE_VOICE_COMMUNICATION,
+    AUDIO_SOURCE_AF = 8,
+    AUDIO_SOURCE_MAX = AUDIO_SOURCE_AF,
 #endif
 
     AUDIO_SOURCE_LIST_END  // must be last - used to validate audio source type
@@ -343,7 +344,7 @@ public:
 #ifdef QCOM_HARDWARE
                 DEVICE_IN_ANLG_DOCK_HEADSET | DEVICE_IN_PROXY |
 #endif
-                DEVICE_IN_DEFAULT)
+                | DEVICE_IN_AF | DEVICE_IN_DEFAULT)
     };
 
     // request to open a direct output with getOutput() (by opposition to sharing an output with other AudioTracks)
